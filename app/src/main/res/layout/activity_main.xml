@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/linear_top"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/actionButton"
+            android:onClick="actionButton"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/resultsButton"
+            android:onClick="results"
+            android:text="Results"/>
+
+
+    </LinearLayout>
+
+    <fragment
+        android:id="@+id/map"
+        android:layout_below="@+id/linear_top"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:name="com.google.android.gms.maps.MapFragment"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_below="@+id/map"
+        android:layout_height="match_parent">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/speed"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:textColor="#426dc9"
+                android:layout_marginLeft="30dp"
+                android:text="Speed"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/txt_speed"
+                android:layout_marginLeft="40dp"
+                android:layout_below="@+id/speed"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginRight="30dp"
+                android:text="Waiting Time"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:textColor="#426dc9"
+                android:layout_alignParentRight="true"
+                android:id="@+id/waitingtime"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/txt_waitingtime"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="60dp"
+                android:layout_below="@+id/speed"
+                android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
