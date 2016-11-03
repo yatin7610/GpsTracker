@@ -32,7 +32,7 @@ public class ResultsActivity extends ActionBarActivity
 			ScrollView scrollView = new ScrollView(this);
 	        TableLayout tableLayout= new TableLayout(this);
 	        HorizontalScrollView horizontalScrollView = new HorizontalScrollView(this);
-	        fare=(int)Math.round(bundle.getFloat("totalDistance"))*18;
+	        fare=18+(int)Math.round(bundle.getFloat("totalDistance"))*18/1000;
 	        TableRow titles = new TableRow(this); 
 	        TableRow.LayoutParams params = new TableRow.LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT,1.0f);
     	    params.setMargins(1, 1, 1, 1);	//	Creates thin margins so that the content is more readable

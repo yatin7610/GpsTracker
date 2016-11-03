@@ -264,7 +264,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
 			if (loc == null)    //	Filtering out null values
 				return;
 			this.m_speedList.add(Float.toString((float) (loc.getSpeed() * 3.6)));    //	Adds location speed
-			this.m_totalSpeed += loc.getSpeed() * 3.6;
+			this.m_totalSpeed = (float) (loc.getSpeed() * 3.6);
 			txt_speed.setText(String.valueOf(m_totalSpeed));
 			this.m_lengthOfTime.add(sdf.format(new Date(loc.getTime())));//	Getting	location time
 			this.m_waitingList.add(txt_waitingtime.getText().toString());  //	Inserting waiting time
