@@ -41,28 +41,32 @@ public class ResultsActivity extends ActionBarActivity
 			titles.addView(createTextView("Waiting time", params));
 	        titles.addView(createTextView("Speed (km/h)", params));	
 	        titles.addView(createTextView("Time", params));
-	        tableLayout.addView(titles, params);         
-	        for (int i = 0; i < distanceList.size(); i++)
-	        {
-	            TableRow row = new TableRow(this);	//	Each row contains one Location, one Distance, one Speed and one Time
-	            
-	            TextView tv_location = createTextView(Integer.toString(i), params);
-	            row.addView(tv_location);
-	            
-	            TextView tv_distance = createTextView(distanceList.get(i).toString(), params);
-	            row.addView(tv_distance);
-	            
-	            TextView tv_speed = createTextView(speedList.get(i).toString(), params);
-	            row.addView(tv_speed);
+	        tableLayout.addView(titles, params);
+			try {
+				for (int i = 0; i < distanceList.size(); i++) {
+					TableRow row = new TableRow(this);    //	Each row contains one Location, one Distance, one Speed and one Time
 
-				TextView tv_waiting = createTextView(waitinglist.get(i).toString(), params);
-				row.addView(tv_waiting);
-	            
-	            TextView tv_time = createTextView(lengthOfTime.get(i).toString(), params);
-	            row.addView(tv_time);
-	            
-	            tableLayout.addView(row, params);
-	        }
+					TextView tv_location = createTextView(Integer.toString(i), params);
+					row.addView(tv_location);
+
+					TextView tv_distance = createTextView(distanceList.get(i).toString(), params);
+					row.addView(tv_distance);
+
+					TextView tv_speed = createTextView(speedList.get(i).toString(), params);
+					row.addView(tv_speed);
+
+					TextView tv_waiting = createTextView(waitinglist.get(i).toString(), params);
+					row.addView(tv_waiting);
+
+					TextView tv_time = createTextView(lengthOfTime.get(i).toString(), params);
+					row.addView(tv_time);
+
+					tableLayout.addView(row, params);
+				}
+			}catch (Exception e)
+			{
+
+			}
 	        TableRow total = new TableRow(this);
 	        total.addView(createTextView("Total", params));
 	        total.addView(createTextView(Float.toString(bundle.getFloat("totalDistance")), params));
